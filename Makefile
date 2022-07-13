@@ -9,7 +9,8 @@ config:
 
 bootstrap:
 	@while [ -z "$$TEMPLATES_ROOT_PATH" ] || [ ! -d "$$TEMPLATES_ROOT_PATH" ]; do \
-	    read -r -p "Type path to valid swift project templates root: " TEMPLATES_ROOT_PATH; \
+			echo "Type path to valid swift project templates root: "; \
+	    read TEMPLATES_ROOT_PATH; \
 	done ; \
 	(cd $$TEMPLATES_ROOT_PATH && \
 	(git clone "https://github.com/rosberry/swift-project-template" || true) && \
