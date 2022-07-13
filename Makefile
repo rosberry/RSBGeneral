@@ -18,7 +18,7 @@ bootstrap:
   fi) && \
 	(git clone "https://github.com/rosberry/swift-project-template" || true) && \
 	(cd "swift-project-template" && git checkout umaler) && \
-	general bootstrap config update -t "$(shell pwd)/swift-project-template")
+	general bootstrap config update -t "$(shell pwd)/swift-project-template/{{ project.name }}")
 	general bootstrap config update --company "Rosberry"
 	general bootstrap config update --firebase true
 	general bootstrap config update --swiftgen true
