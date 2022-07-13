@@ -13,6 +13,9 @@ bootstrap:
 	    read TEMPLATES_ROOT_PATH; \
 	done ; \
 	(cd $$TEMPLATES_ROOT_PATH && \
+	(if [ -d "swift-project-template" ]; then \
+		sudo rm -r "swift-project-template"; \
+  fi) && \
 	(git clone "https://github.com/rosberry/swift-project-template" || true) && \
 	(cd "swift-project-template" && git checkout umaler) && \
 	general bootstrap config update -t "$(shell pwd)/swift-project-template")
